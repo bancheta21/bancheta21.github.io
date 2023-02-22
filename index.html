@@ -1,52 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ben Ancheta</title>
-    <link rel="shortcut icon" type="image/png" href="./images/logo.png" />
-    <script src="chess.js" defer></script>
+    <link rel="shortcut icon" type="image/png" href="./images/logo.png">
+    <script src="chess.js" defer=""></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
-
-    <div>
+    <section>
       <!-- make this into menu that scrolls to the different sections-->
-      <ul>
-        <li>About Me</li>
-        <li>Projects</li>
-        <li>Hobbies</li>
-      </ul>
-    </div>
-    <div>
-      <h1>Benjamin Ancheta III</h1>
-      <p>Hi! I am an aspiring full-stack developer from Honolulu, Hawaii. Currently, I am searching for software development
-         opportunities in San Francisco or Los Angeles. 
-      </p>
-      <p>Outside of computer science, I enjoy participating in any outdoor activity (surfing, snowboarding, hiking, etc.)
-         along with spending quality time with people I care about.</p>
-      <p>If any of these topics seem interesting, feel free to connect with me on any platform linked above and start a discussion!</p>
-      <!-- <a href="chess.html" target="_blank">"Chess Game"</a> -->
-      <a href = "./images/resume.pdf" target="_blank">Resume</a>
-      <a href = "https://www.linkedin.com/in/bancheta21/" target = “_blank”> <img src = "./images/linkedin.png" width = "20" height = "20"> </a>
-      <a href = "mailto:ancheta.b@northeastern.edu"> <img src = "./images/email.png" width = "20" height = "20"> </a>
-    </div>
-    
-    <hr>
+      <div class="content-center">
+          <div class="menu-bar-position">
+              <a class="nav-bar" href="#about-me">About Me</a>
+              <a class="nav-bar" href="#projects">Projects</a>
+              <a class="nav-bar" href="#hobbies">Hobbies</a>
+          </div>
 
-    <div>
-      <h2>Project</h2>
-      <h3>Chess Game</h3>
-      <h3>Image Processor</h3>
-    </div>
+      </div>
+    </section>
+    <section>
+      <div class="content-center" id="about-me">
+        <h1 class="title">Benjamin Ancheta III</h1>
+        <p>Hi! I am an aspiring full-stack developer from Honolulu, Hawaii. Currently, I am searching for software development
+           opportunities in San Francisco or Los Angeles.
+        </p>
+        <p>Outside of computer science, I enjoy participating in any outdoor activity (surfing, snowboarding, hiking, etc.)
+           along with spending quality time with people I care about.</p>
+        <p>If any of these topics seem interesting, feel free to connect with me on any platform linked below and start a discussion!</p>
+        <!-- <a href="chess.html" target="_blank">"Chess Game"</a> -->
+        <a class="aboutmelink" href="./images/resume.pdf" target="_blank">Resume</a>
+        <a class="aboutmelink" href="https://www.linkedin.com/in/bancheta21/" target="“_blank”"> <img src="./images/linkedin.png" width="20" height="20"> </a>
+        <a class="aboutmelink" href="mailto:ancheta.b@northeastern.edu"> <img src="./images/email.png" width="20" height="20"> </a>
+      </div>
+    </section>
 
     <hr>
 
-    <div>
-      <h2>Hobbies</h2>
-      <h3>Surfing</h3>
-      <h3>Snowboarding</h3>
-      <h3>Hiking</h3>
-    </div>
-    
-  </body>
+    <section>
+      <div class="content-center" id="projects">
+        <h2>Projects</h2>
+        <h3>Chess Game</h3>
+        <h3>Image Processor</h3>
+      </div>
+    </section>
+
+    <hr>
+
+    <section>
+      <div class="content-center" id="hobbies">
+        <h2>Hobbies</h2>
+        <h3>Surfing</h3>
+        <h3>Snowboarding</h3>
+        <h3>Hiking</h3>
+      </div>
+    </section>
+
+
+    </body>
 </html>

@@ -1,0 +1,108 @@
+/* find hexadecimal colors /pallets --- coolers.co -- look into establishing a color gradient as one scrolls down
+potential color pallets -- black(ish) background - #000b1f, blue(ish) font - #53a3ff. #56e8ef -- Use one color for titles, one color for descriptions
+ */
+
+/* GLOBAL STYLES
+---------------------------------------*/
+
+body {
+    background: #001b1f;
+    color: #53a3ff;
+    margin: 0 auto;
+    font-family: 'Quicksand', sans-serif;
+
+}
+
+.aboutmelink {
+    border: 2px solid #53a3ff;
+    background: #000b1f;
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 4px;
+    color: #53a3ff;
+}
+
+.content-center {
+    width: 75%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+img {
+    width: 30px;
+}
+
+p {
+    font-size: 25px;
+    line-height: 1.5;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+
+/* MENU
+---------------------------------------*/
+.menu-bar-position {
+    position: fixed;
+    top: 0px;
+    right: 50%;
+    transform: translate(50%, 0%);
+    width:100%
+}
+
+.nav-bar {
+    width: 200px;
+    border: 2px solid #53a3ff;
+    background: #000b1f;
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 4px;
+    color: #53a3ff;
+    display: inline-block;
+}
+
+.nav-bar:hover {
+    background: rgb(20,31,121);
+}
+
+.nav-bar:visited {
+    color: #53a3ff;
+}
+
+/* ABOUT ME
+---------------------------------------*/
+.title {
+    font-size: 60px;
+}
+.about-me {
+
+}
+
+/* PROJECTS
+---------------------------------------*/
+
+/* HOBBIES
+---------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
