@@ -13,6 +13,7 @@ body {
 
 }
 
+/* where the buttons for social/resume are styled */
 .aboutmelink {
     border: 2px solid #53a3ff;
     background: #000b1f;
@@ -20,16 +21,14 @@ body {
     padding: 8px;
     border-radius: 4px;
     color: #53a3ff;
+    display: inline-block;
+    text-align: center;
 }
 
 .content-center {
     width: 75%;
     margin: 0 auto;
     text-align: center;
-}
-
-img {
-    width: 30px;
 }
 
 p {
