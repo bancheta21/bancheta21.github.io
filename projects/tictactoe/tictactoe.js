@@ -43,7 +43,7 @@ function handlePlayAgainClick() {
     document.getElementById("9").disabled = false;
     document.getElementById("play-again").style.opacity = 0;
     document.getElementById("winner").innerHTML = "Tic Tac Toe";
-
+    move = true;
 }
 
 function isGameOver() {
