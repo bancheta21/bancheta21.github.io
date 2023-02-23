@@ -44,6 +44,10 @@ h2 {
     font-size: 40px;
 }
 
+hr {
+    border-color: #53a3ff;
+}
+
 
 /* MENU
 ---------------------------------------*/
@@ -80,11 +84,26 @@ h2 {
     font-size: 60px;
 }
 
+#about-me {
+    padding-top: 100px;
+    margin-top: -100px;
+}
+
 /* PROJECTS
 ---------------------------------------*/
+#projects {
+    padding-top: 20px;
+    margin-top: -30px;
+}
 
 /* HOBBIES
 ---------------------------------------*/
+#hobbies {
+    padding-bottom: 500px;
+    padding-top: 20px;
+    margin-top: -30px;
+}
+
 .grid-container {
     display: grid;
     background-color: #000;
