@@ -6,7 +6,7 @@ potential color pallets -- black(ish) background - #000b1f, blue(ish) font - #53
 ---------------------------------------*/
 
 body {
-    background: #001b1f;
+    background: #000000;
     color: #53a3ff;
     margin: 0 auto;
     font-family: 'Quicksand', sans-serif;
@@ -16,13 +16,17 @@ body {
 /* where the buttons for social/resume are styled */
 .aboutmelink {
     border: 2px solid #53a3ff;
-    background: #000b1f;
+    background: #000000;
     text-decoration: none;
-    padding: 8px;
-    border-radius: 4px;
+    padding: 12px;
     color: #53a3ff;
     display: inline-block;
     text-align: center;
+    
+}
+
+.aboutmelink:hover {
+    background: rgb(20,31,121);
 }
 
 .content-center {
@@ -51,8 +55,8 @@ h2 {
     width:100%
 }
 
-.nav-bar {
-    width: 200px;
+.menu-bar-position > a {
+    width: 20%;
     border: 2px solid #53a3ff;
     background: #000b1f;
     text-decoration: none;
@@ -62,11 +66,11 @@ h2 {
     display: inline-block;
 }
 
-.nav-bar:hover {
+.menu-bar-position a:hover {
     background: rgb(20,31,121);
 }
 
-.nav-bar:visited {
+.menu-bar-position a:visited {
     color: #53a3ff;
 }
 
@@ -81,9 +85,72 @@ h2 {
 
 /* HOBBIES
 ---------------------------------------*/
+.grid-container {
+    display: grid;
+    background-color: #000;
+    padding: 10px;
+    column-gap: 20px;
+    row-gap: 20px;
+    /*
+    Figure out how to make the grid reactive
+    width: 95%;
+    */
+    justify-content: center;
+    transform: (20%, 0%);
+    grid-template-columns: 250px 250px 250px 250px;
+    grid-template-rows: 116px 141px 188px 37px 50px;
+}
 
+.grid-item {
+    width: 250px;
+}
 
+#pano {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
 
+#puuikena {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    padding-top: 53px;
+}
+
+#beach {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 3;
+
+}
+
+#dog {
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+#frat {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
+
+#hike {
+    grid-column-start:4;
+    grid-column-end: 5;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+#homie {
+    grid-column-start: 2;
+    grid-column-start: 3;
+    grid-row-start: 5;
+    grid-row-end: 6;
+}
 
 
 
