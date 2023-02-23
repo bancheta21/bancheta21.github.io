@@ -1,0 +1,21 @@
+.grid-container {
+    border: white;
+    width: 40%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin: auto;
+    column-gap: 0;
+    row-gap: 0;
+}
+
+.box {
+    padding-bottom: 100%;
+    height: 0;
+    background-color: white;
+    font-size: calc(12vw);
+    text-align:center;
+}
+
+.box:disabled {
+    color: #000000;
+}

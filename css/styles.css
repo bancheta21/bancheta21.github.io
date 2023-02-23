@@ -74,9 +74,11 @@ hr {
     background: rgb(20,31,121);
 }
 
-.menu-bar-position a:visited {
+a:visited {
     color: #53a3ff;
+    text-decoration: none;
 }
+
 
 /* ABOUT ME
 ---------------------------------------*/
@@ -95,6 +97,7 @@ hr {
     padding-top: 20px;
     margin-top: -30px;
 }
+
 
 /* HOBBIES
 ---------------------------------------*/
