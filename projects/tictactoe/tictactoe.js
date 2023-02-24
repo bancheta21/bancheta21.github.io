@@ -106,5 +106,18 @@ function isGameOver() {
             buttons[i].disabled = true;
         }
         document.getElementById("play-again").style.opacity = 1;
+    } else if (document.getElementById("1").innerHTML != ''
+    & document.getElementById("2").innerHTML != ''
+    & document.getElementById("3").innerHTML != ''
+    & document.getElementById("4").innerHTML != ''
+    & document.getElementById("5").innerHTML != ''
+    & document.getElementById("6").innerHTML != ''
+    & document.getElementById("7").innerHTML != ''
+    & document.getElementById("8").innerHTML != ''
+    & document.getElementById("9").innerHTML != '') {
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].disabled = true;
+        }
+        document.getElementById("play-again").style.opacity = 1;
     }
 }
