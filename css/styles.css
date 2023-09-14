@@ -30,10 +30,6 @@ body {
     flex-direction: row;
 }
 
-.dropdown {
-
-}
-
 .dropdown-button {
     width: 100px;
     padding: 8px;
@@ -63,5 +59,3 @@ body {
 .map {
     margin-top: 80px;
 }
-
-.

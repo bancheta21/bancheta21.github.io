@@ -1,8 +1,11 @@
 
 // create top menu bar to select location and add logic to 'flyTo' new location
-df = dfd.readCSV("https://docs.google.com/spreadsheets/d/1Sf5P6EdPN0mMej4J4kLIDcmjVB198qJZxDc-YqggiA4/gviz/tq?tqx=out:csv&sheet=Sheet1").then(df => {            
-    initialSetup(df);
+document.addEventListener('DOMContentLoaded', function () {
+    df = dfd.readCSV("https://docs.google.com/spreadsheets/d/1Sf5P6EdPN0mMej4J4kLIDcmjVB198qJZxDc-YqggiA4/gviz/tq?tqx=out:csv&sheet=Sheet1").then(df => {            
+        initialSetup(df);
+    });
 });
+
 
 
 
@@ -76,6 +79,11 @@ function locationClickHandler(df) {
 
         updateFilter();
     });
+
+    var changeEvent = new Event('change', {
+        'bubbles': true,
+    })
+    locationDropdown.dispatchEvent(changeEvent);
 }
 
 function updateFilter() {
