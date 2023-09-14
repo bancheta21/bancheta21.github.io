@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ben Ancheta</title>
     <link rel="shortcut icon" type="image/png" href="./images/logo.png" />
-    <script src="index.js" defer=""></script>
+    <script src="index.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,65 +19,39 @@
       href="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css"
       rel="stylesheet"
     />
+    <script src="https://cdn.jsdelivr.net/npm/danfojs@1.1.2/lib/bundle.min.js"></script>
   </head>
   <body class="all-sections">
-    <section class="title">Hawaii Recommendations</section>
+    <section class="title">Recommendations</section>
     <section class="dropdown-section">
       <div class="dropdown">
-        <button class="dropdown-button">Hikes</button>
-        <div class="dropdown-content">
-          <div class="dropdown-row">
-            <input type="checkbox" id="some sort of id to identify in JS" />
-            Easy
-          </div>
-          <div class="dropdown-row">
-            <input type="checkbox" id="some sort of id to identify in JS" />
-            Medium
-          </div>
-          <div class="dropdown-row">
-            <input type="checkbox" id="some sort of id to identify in JS" />
-            Hard
+        <label>
+          Location:
+          <select id="locationDropdown">
+            <option>TEST</option>
+            <option>Hawaii</option>
+          </select>
+        </label>
+      </div>
+      <section id="menuContent">
+        <div class="dropdown">
+          <button class="dropdown-button">TEMPORARY EXAMPLE</button>
+          <div class="dropdown-content">
+            <div class="dropdown-row">
+              <input type="checkbox" id="hikes-easy" />
+              V3
+            </div>
+            <div class="dropdown-row">
+              <input type="checkbox" id="some sort of id to identify in JS" />
+              V2
+            </div>
+            <div class="dropdown-row">
+              <input type="checkbox" id="some sort of id to identify in JS" />
+              V3
+            </div>
           </div>
         </div>
-      </div>
-      <div class="dropdown">
-        <button class="dropdown-button">Restaurants</button>
-        <div class="dropdown-content">
-          <div class="dropdown-row">
-            <input type="checkbox" id="some sort of id to identify in JS" />
-            Sushi
-          </div>
-          <div class="dropdown-row">
-            <input type="checkbox" id="some sort of id to identify in JS" />
-            Poke
-          </div>
-          <div class="dropdown-row">
-            <input type="checkbox" id="some sort of id to identify in JS" />
-            Ramen
-          </div>
-          <div class="dropdown-row">
-            <input type="checkbox" id="some sort of id to identify in JS" />
-            Chinese
-          </div>
-        </div>
-      </div>
-      <div class="dropdown">
-        <button class="dropdown-button">Beaches</button>
-        <div class="dropdown-content">
-          <div class="dropdown-row">
-            <input type="checkbox" id="some sort of id to identify in JS" />
-            Sunset
-          </div>
-          <div class="dropdown-row">
-            <input type="checkbox" id="some sort of id to identify in JS" />
-            Sunrise
-          </div>
-          <div class="dropdown-row">
-            <input type="checkbox" id="some sort of id to identify in JS" />
-            Surf/Active
-          </div>
-        </div>
-      </div>
+      </section>
     </section>
     <section>
       <div
