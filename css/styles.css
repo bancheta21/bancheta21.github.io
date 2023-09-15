@@ -28,10 +28,11 @@ body {
 .dropdown-section {
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 
 .dropdown-button {
-    width: 100px;
+    min-width: 100px;
     padding: 8px;
     border-radius: 8px;
     color: #53a3ff;
@@ -39,8 +40,6 @@ body {
 
 .dropdown-content {
     display: none;
-    position: absolute;
-
 }
 
 .dropdown:hover .dropdown-content {
@@ -57,5 +56,5 @@ body {
 */
 
 .map {
-    margin-top: 80px;
+    margin-top: 20px;
 }

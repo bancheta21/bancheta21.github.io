@@ -20,18 +20,20 @@
       rel="stylesheet"
     />
     <script src="https://cdn.jsdelivr.net/npm/danfojs@1.1.2/lib/bundle.min.js"></script>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9415952960929297"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body class="all-sections">
     <section class="title">Recommendations</section>
-    <section class="dropdown-section">
-      <div class="dropdown">
-        <label>
+    <section>
+      <div class="dropdown-section">
+        <button class="dropdown-button">
           Location:
-          <select id="locationDropdown">
-            <option>TEST</option>
-            <option>Hawaii</option>
-          </select>
-        </label>
+          <select id="locationDropdown"></select>
+        </button>
       </div>
       <section id="menuContent"></section>
     </section>
@@ -50,7 +52,7 @@
           "pk.eyJ1IjoiYmFuY2hldGEyMSIsImEiOiJjbGx5ZTVwcnAwc2Z4M29sZTRlMWN1Yzl2In0.I80-B3fD1_Re2VZgnNEfcQ";
         var map = new mapboxgl.Map({
           container: "map",
-          style: "mapbox://styles/bancheta21/cllyeucvo008e01rc8bqs3qec",
+          style: "mapbox://styles/mapbox/outdoors-v12",
           center: [-157.96667740200724, 21.466817709200892],
           zoom: 8.5,
         });
@@ -89,6 +91,12 @@
                       "circle-color": "purple",
                     },
                   });
+
+                  map.setFilter("csvData", [
+                    "==",
+                    "nonexistent",
+                    "filter_out_all",
+                  ]);
 
                   // When a click event occurs on a feature in the csvData layer, open a popup at the
                   // location of the feature, with description HTML from its properties.

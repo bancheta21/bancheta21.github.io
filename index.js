@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 function initialSetup(df) {
+
     const locations = [...new Set(df['Location'].values)];
                 const locationDropdown = document.getElementById("locationDropdown");
                 locationDropdown.innerHTML = '';
@@ -18,6 +19,7 @@ function initialSetup(df) {
                     option.text = locations[i];
                     locationDropdown.appendChild(option);
                 }
+                locationDropdown.appendChild(document.createElement("br"));
     locationClickHandler(df);
 }
 
@@ -67,7 +69,7 @@ function locationClickHandler(df) {
             const checkPerLocation = [...new Set(df.query(df['Location'].eq(selectedOption) && df['Category'].eq(dropdownHeaders[i]))['Subcategory'].values)];
             for (let j = 0; j < checkPerLocation.length; j++) {
                 const temp = document.createElement("div");
-                temp.classList.add("dropdown-row");
+                temp.classList.add("dropdown-row", "dropdown-content");
                 const tempCheck = document.createElement("input");
                 tempCheck.type = "checkbox";
                 tempCheck.id = checkPerLocation[j];
