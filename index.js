@@ -19,7 +19,6 @@ function initialSetup(df) {
                     option.text = locations[i];
                     locationDropdown.appendChild(option);
                 }
-                locationDropdown.appendChild(document.createElement("br"));
     locationClickHandler(df);
 }
 

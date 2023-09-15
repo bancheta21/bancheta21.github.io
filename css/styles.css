@@ -57,4 +57,6 @@ body {
 
 .map {
     margin-top: 20px;
+    width: 900px;
+    height: 500px;
 }
