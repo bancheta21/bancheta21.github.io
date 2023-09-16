@@ -83,26 +83,35 @@ function locationClickHandler(df) {
 
     var changeEvent = new Event('change', {
         'bubbles': true,
-    })
+    });
     locationDropdown.dispatchEvent(changeEvent);
 }
 
 function updateFilter() {
-    var input = document.querySelectorAll('input')
-
+    var input = document.querySelectorAll('input');
 
     input.forEach(function(checkbox) {
         checkbox.addEventListener('change', function(event) {
-            clickedInput = event.target;
+            updateFilterHelper();
+        });
+    });
 
-            const filterArray = ['any'];
+    var test = document.getElementById("locationDropdown");
+    test.addEventListener('change', function(event) {
+        
+        updateFilterHelper();
+    });
+}
+
+function updateFilterHelper() {
+    var input = document.querySelectorAll('input');
+
+    const filterArray = ['any'];
             input.forEach(function (checkbox) {
                 if (checkbox.checked) {
                   filterArray.push(['==', 'Subcategory', checkbox.id]);
                 }
               });
             map.setFilter('csvData', filterArray);
-        });
-    });
 }
 
