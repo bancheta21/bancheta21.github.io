@@ -16,6 +16,8 @@ button {
     outline: none;
     padding-top: 16px;
     padding-bottom: 16px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
 }
 
 .all-sections {
@@ -32,7 +34,7 @@ button {
 
 .title {
     font-size: 50px;
-    padding: 8px;
+    padding: 8px 32px;
 }
 
 /* MENU CLASSES
@@ -78,7 +80,6 @@ button {
   }
 
   .content {
-    padding: 3px 18px;
     display: none;
     overflow: hidden;
   }
