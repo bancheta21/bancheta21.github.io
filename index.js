@@ -1,13 +1,9 @@
-
 // create top menu bar to select location and add logic to 'flyTo' new location
 document.addEventListener('DOMContentLoaded', function () {
     df = dfd.readCSV("https://docs.google.com/spreadsheets/d/1Sf5P6EdPN0mMej4J4kLIDcmjVB198qJZxDc-YqggiA4/gviz/tq?tqx=out:csv&sheet=Sheet1").then(df => {            
         initialSetup(df);
     });
 });
-
-
-
 
 function initialSetup(df) {
 
@@ -54,28 +50,45 @@ function locationClickHandler(df) {
         menuContent.innerHTML = '';
 
         for (let i = 0; i < dropdownHeaders.length; i++) {
-            const titleDiv = document.createElement("div");
-            titleDiv.id = dropdownHeaders[i];
-            const title = document.createElement("button");
-            title.textContent = dropdownHeaders[i];
-            title.classList.add("dropdown-button");
-            titleDiv.append(title);
-            menuContent.append(titleDiv);
-        }
-
-        for (let i = 0;i < dropdownHeaders.length; i++) {
-            const button = document.getElementById(dropdownHeaders[i]);
+            const dropdownDiv = document.createElement("div");
+            dropdownDiv.id = 'menuDropdown';
+            const dropdownButton = document.createElement("button");
+            dropdownButton.textContent = dropdownHeaders[i];
+            dropdownButton.classList.add("dropdown-button");
+            const endingPunc = document.createElement('div');
+            endingPunc.textContent = '+';
+            endingPunc.classList.add('endingPunc');
+            dropdownButton.append(endingPunc);
+            dropdownDiv.append(dropdownButton);
             const checkPerLocation = [...new Set(df.query(df['Location'].eq(selectedOption) && df['Category'].eq(dropdownHeaders[i]))['Subcategory'].values)];
+            const temp = document.createElement("div");
+            temp.classList.add('dropdown-row');
             for (let j = 0; j < checkPerLocation.length; j++) {
-                const temp = document.createElement("div");
-                temp.classList.add("dropdown-row", "dropdown-content");
+                const tempRow = document.createElement('div');
                 const tempCheck = document.createElement("input");
                 tempCheck.type = "checkbox";
                 tempCheck.id = checkPerLocation[j];
-                temp.append(tempCheck);
-                temp.append(checkPerLocation[j]);
-                button.append(temp);
+                tempRow.append(tempCheck);
+                tempRow.append(checkPerLocation[j]);
+                temp.classList.add('content');
+                temp.append(tempRow);
+                dropdownDiv.append(temp);
             }
+            dropdownButton.addEventListener('click', function(event) {
+                const clicked = this.parentNode.getElementsByClassName('content');
+                if (clicked[0].style.display === 'flex' && clicked[0] !== undefined) {
+
+                    clicked[0].classList.remove('content-showing');
+                    clicked[0].style.display = 'none';
+                    this.getElementsByClassName('endingPunc')[0].textContent = '+';
+                } else {
+                    clicked[0].style.display = 'flex';
+                    clicked[0].style.flexDirection = 'column';
+                    clicked[0].classList.add('content-showing');
+                    this.getElementsByClassName('endingPunc')[0].textContent = '-';
+                }
+            });
+            menuContent.append(dropdownDiv);
         }
 
         updateFilter();

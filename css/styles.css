@@ -1,25 +1,38 @@
-/* find hexadecimal colors /pallets --- coolers.co -- look into establishing a color gradient as one scrolls down
-potential color pallets -- black(ish) background - #000b1f, blue(ish) font - #53a3ff. #56e8ef -- Use one color for titles, one color for descriptions
- */
-
 /* GLOBAL STYLES
 ---------------------------------------*/
 
 body {
-    background: #000000;
-    color: #53a3ff;
+    color: #dadada;
     margin: 0 auto;
     font-family: 'Quicksand', sans-serif;
+    background: rgba(0,0,0,.9);
+
+}
+
+button {
+    background-color: rgba(0,0,0,0);
+    color: #dadada;
+    border: none;
+    outline: none;
+    padding-top: 16px;
+    padding-bottom: 16px;
 }
 
 .all-sections {
     display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.left-nav-bar {
+    display: flex;
     flex-direction: column;
-    align-items: center;
+    height: 100vh;
 }
 
 .title {
     font-size: 50px;
+    padding: 8px;
 }
 
 /* MENU CLASSES
@@ -27,15 +40,17 @@ body {
 
 .dropdown-section {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
 }
 
 .dropdown-button {
-    min-width: 100px;
-    padding: 8px;
-    border-radius: 8px;
-    color: #53a3ff;
+    width: 100%;
+    padding: 8px 20px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 .dropdown-content {
@@ -52,12 +67,34 @@ body {
     flex-direction: row;
 }
 
+.collapsible {
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+  }
+
+  .content {
+    padding: 3px 18px;
+    display: none;
+    overflow: hidden;
+  }
+
+  .content-showing {
+    padding: 3px 18px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-size:12px;
+  }
+
 /* MAP CLASSES
 */
 
 .map {
-    margin-top: 20px;
-    width: 900px;
-    height: 500px;
-    border-radius: 8px;
+    width: 100% !important;
+    height: 100vh !important;
 }
