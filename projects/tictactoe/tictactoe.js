@@ -119,6 +119,5 @@ function isGameOver() {
             buttons[i].disabled = true;
         }
         document.getElementById("play-again").style.opacity = 1;
-        document.getElementById("winner").innerHTML = "Tie!";
     }
 }
