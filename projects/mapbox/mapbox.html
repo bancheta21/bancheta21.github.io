@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ben Ancheta</title>
+    <link rel="shortcut icon" type="image/png" href="./images/logo.png" />
+    <script src="mapbox.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./mapbox.css" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js"></script>
+    <script src="https://npmcdn.com/csv2geojson@latest/csv2geojson.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/danfojs@1.1.2/lib/bundle.min.js"></script>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9415952960929297"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="all-sections">
+    <section class="left-nav-bar">
+      <section class="title">Ancheta&nbspArchives</section>
+      <section>
+        <div class="dropdown-section">
+          <button class="dropdown-button">
+            Location:
+            <select id="locationDropdown"></select>
+          </button>
+        </div>
+        <section id="menuContent"></section>
+      </section>
+      </section>
+      <div id="map" class="map"></div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+      <script src="https://npmcdn.com/csv2geojson@latest/csv2geojson.js"></script>
+      <script src="https://npmcdn.com/@turf/turf/turf.min.js"></script>
+      <script>
+        mapboxgl.accessToken =
+          "pk.eyJ1IjoiYmFuY2hldGEyMSIsImEiOiJjbGx5ZTVwcnAwc2Z4M29sZTRlMWN1Yzl2In0.I80-B3fD1_Re2VZgnNEfcQ";
+        var map = new mapboxgl.Map({
+          container: "map",
+          style: "mapbox://styles/mapbox/outdoors-v12",
+          center: [-157.96667740200724, 21.466817709200892],
+          zoom: 8.5,
+        });
+
+        $(document).ready(function () {
+          $.ajax({
+            type: "GET",
+            //YOUR TURN: Replace with csv export link
+            url: "https://docs.google.com/spreadsheets/d/1Sf5P6EdPN0mMej4J4kLIDcmjVB198qJZxDc-YqggiA4/gviz/tq?tqx=out:csv&sheet=Sheet1",
+            dataType: "text",
+            success: function (csvData) {
+              makeGeoJSON(csvData);
+            },
+          });
+
+          function makeGeoJSON(csvData) {
+            csv2geojson.csv2geojson(
+              csvData,
+              {
+                latfield: "Latitude",
+                lonfield: "Longitude",
+                delimiter: ",",
+              },
+              function (err, data) {
+                map.on("load", function () {
+                  //Add the the layer to the map
+                  map.addLayer({
+                    id: "csvData",
+                    type: "circle",
+                    source: {
+                      type: "geojson",
+                      data: data,
+                    },
+                    paint: {
+                      "circle-radius": 5,
+                      "circle-color": "purple",
+                    },
+                  });
+
+                  map.setFilter("csvData", [
+                    "==",
+                    "nonexistent",
+                    "filter_out_all",
+                  ]);
+
+                  // When a click event occurs on a feature in the csvData layer, open a popup at the
+                  // location of the feature, with description HTML from its properties.
+                  map.on("click", "csvData", function (e) {
+                    var coordinates =
+                      e.features[0].geometry.coordinates.slice();
+
+                    //set popup text
+                    //You can adjust the values of the popup to match the headers of your CSV.
+                    // For example: e.features[0].properties.Name is retrieving information from the field Name in the original CSV.
+                    var description =
+                      `<h3>` +
+                      e.features[0].properties.Name +
+                      `</h3>` +
+                      `<h4>` +
+                      `<b>` +
+                      `Description: ` +
+                      `</b>` +
+                      e.features[0].properties.Description;
+
+                    // Ensure that if the map is zoomed out such that multiple
+                    // copies of the feature are visible, the popup appears
+                    // over the copy being pointed to.
+                    while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                      coordinates[0] +=
+                        e.lngLat.lng > coordinates[0] ? 360 : -360;
+                    }
+
+                    //add Popup to map
+
+                    new mapboxgl.Popup()
+                      .setLngLat(coordinates)
+                      .setHTML(description)
+                      .addTo(map);
+                  });
+                });
+              }
+            );
+          }
+        });
+      </script>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,101 @@
+/* GLOBAL STYLES
+---------------------------------------*/
+
+body {
+    color: #dadada;
+    margin: 0 auto;
+    font-family: 'Quicksand', sans-serif;
+    background: rgba(0,0,0,.9);
+
+}
+
+button {
+    background-color: rgba(0,0,0,0);
+    color: #dadada;
+    border: none;
+    outline: none;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+}
+
+.all-sections {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.left-nav-bar {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.title {
+    font-size: 50px;
+    padding: 8px 32px;
+}
+
+/* MENU CLASSES
+*/
+
+.dropdown-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.dropdown-button {
+    width: 100%;
+    padding: 8px 20px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.dropdown-content {
+    display: none;
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.collapsible {
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+  }
+
+  .content {
+    display: none;
+    overflow: hidden;
+  }
+
+  .content-showing {
+    padding: 3px 18px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-size:12px;
+  }
+
+/* MAP CLASSES
+*/
+
+.map {
+    width: 100% !important;
+    height: 100vh !important;
+}
